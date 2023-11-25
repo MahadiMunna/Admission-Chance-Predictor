@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:linear-gradient(120deg,#510A32,#2D142C);
+            color: #bdd8f2;; 
+            margin: 0;
+            padding: 0;
+        }
+
+        h1{
+            margin-top: 50px;
+            text-align: center;
+            color: #fb0e95;
+        }
+
+        form {
+            padding: 20px;
+            width: 550px; 
+            margin: auto;
+            margin-top: 50px;
+            display: grid;
+            gap: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #fcfcfc;
+            border-radius: 5px;
+            background-color: #fbc8c8;
+        }
+
+        #research-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn {
+            grid-column: span 2;
+            background-color: #344e5c;
+            color: rgb(225, 193, 193);
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: rgb(3, 64, 24);
+        }
+        .btn.loading {
+            background-color: rgb(3, 64, 24);
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+    </style>
+    <title>Admission Chance Predictor</title>
+    <link rel="shortcut icon" href="./logo.jpg" type="image/x-icon">
+</head>
+<body>
+    <div>
+        <h1>Admission Chance Predictor</h1>
+    </div>
+    <div>
+        <form action="#" method="post">
+            <label for="gre">Enter GRE score</label>
+            <input type="number" min="1" max="340" id="gre" name="gre" placeholder="GRE score out of 340" required>
+        
+            <label for="toefl">Enter TOEFL score</label>
+            <input type="number" min="1" max="120" id="toefl" name="toefl" placeholder="TOEFL score out of 120" required>
+        
+            <label for="uni_rate">Enter university rating</label>
+            <input type="number" min="1" max="5" id="uni_rate" name="uni_rate" placeholder="University rating out of 5" required>
+        
+            <label for="sop">Enter Statement of Purpose score</label>
+            <input type="text" id="sop" name="sop" placeholder="SOP score of 5" required>
+        
+            <label for="lor">Enter Letter of Recommendation score</label>
+            <input type="text" id="lor" name="lor" placeholder="LOR score out of 5" required>
+        
+            <label for="cgpa">Enter CGPA (out of 10)</label>
+            <input type="text" id="cgpa" name="cgpa" placeholder="CGPA out of 10" required>
+    
+            <div id="research-container">
+                <label for="research">Do you have any Research? </label>
+                <input type="radio" id="research_yes" name="research" value="1" required>
+                <label for="research_yes">Yes</label>
+                
+                <input type="radio" id="research_no" name="research" value="0" required>
+                <label for="research_no">No</label>
+            </div>
+        
+            <input class="btn" type="submit" value="Predict">
+        </form>
+    </div>
+    <script>
+        const submitButton = document.querySelector('.btn');
+    
+        submitButton.addEventListener('click', () => {
+          submitButton.classList.add('loading');
+          submitButton.value = 'Predicting...';
+    
+          setTimeout(() => {
+            submitButton.classList.remove('loading');
+            submitButton.value = 'Predict';
+          }, 3000);
+        });
+      </script>
+</body>
+</html>

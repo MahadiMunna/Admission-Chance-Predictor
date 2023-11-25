@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:linear-gradient(120deg,#510A32,#2D142C);
+            color: #bdd8f2;; 
+            margin: 0;
+            padding: 0;
+        }
+        .predict{
+            text-align: center;
+            width: 500px;
+            margin: auto;
+            margin-top: 100px;
+            background-color: #2e0c2d;
+            padding: 50px;
+            border-radius: 10px;
+        }
+        .prediction{
+            color: #d62188;
+            font-size: 50px;
+        }
+    </style>
+    <title>Prediction</title>
+    <link rel="shortcut icon" href="./logo.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="predict">
+        <h1>Predicted Chance of Admission <span class="prediction">{{content}}%</span></h1>
+    </div>
+</body>
+</html>
