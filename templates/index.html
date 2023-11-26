@@ -7,7 +7,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background:linear-gradient(120deg,#510A32,#2D142C);
-            color: #bdd8f2;; 
+            color: #bdd8f2; 
             margin: 0;
             padding: 0;
         }
@@ -34,6 +34,22 @@
             border: 1px solid #fcfcfc;
             border-radius: 5px;
             background-color: #fbc8c8;
+        }
+
+        .uni_rate {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #fcfcfc;
+            border-radius: 5px;
+            background-color: #fbc8c8;
+            color: rgb(92, 91, 91);
+        }
+
+        .uni_rate:hover,
+        .uni_rate:focus {
+            border-color: #af06fd;
+            box-shadow: 0 0 5px rgba(204, 0, 255, 0.5);
         }
 
         #research-container {
@@ -85,13 +101,20 @@
     <div>
         <form action="#" method="post">
             <label for="gre">Enter GRE score</label>
-            <input type="number" min="1" max="340" id="gre" name="gre" placeholder="GRE score out of 340" required>
+            <input type="number" min="270" max="340" id="gre" name="gre" placeholder="GRE score out of 340" required>
         
             <label for="toefl">Enter TOEFL score</label>
-            <input type="number" min="1" max="120" id="toefl" name="toefl" placeholder="TOEFL score out of 120" required>
+            <input type="number" min="80" max="120" id="toefl" name="toefl" placeholder="TOEFL score out of 120" required>
         
-            <label for="uni_rate">Enter university rating</label>
-            <input type="number" min="1" max="5" id="uni_rate" name="uni_rate" placeholder="University rating out of 5" required>
+            <label for="uni_rate">Select your university rating</label>
+            <select class="uni_rate" name="uni_rate" id="uni_rate" required>
+                <option value="" disabled selected>Select university rating</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
         
             <label for="sop">Enter Statement of Purpose score</label>
             <input type="text" id="sop" name="sop" placeholder="SOP score of 5" required>
